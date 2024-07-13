@@ -3,18 +3,66 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # 17
 VisualStudioVersion = 17.11.35103.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5A731584-32E6-430E-8BF1-BB58CACD75F1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A731584-32E6-430E-8BF1-BB58CACD75F1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
-	ProjectSection(SolutionItems) = preProject
-		Readme.md = Readme.md
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizer", "src\Client\Localizer\Localizer.csproj", "{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{54A0B55A-CC26-48E4-AECC-B861C22D64F4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{F2ED51E3-BAF7-4E5D-9E5A-E4F350B83C55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A54F1738-806E-4655-871E-57BE789F9BA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\Shared\Models\Models.csproj", "{501C4368-A649-4C2C-9527-61F5CE45A6E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45766CBD-D067-49F2-B1AA-2355519F4DA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Readme.md = Readme.md
+		spelling.dic = spelling.dic
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A3C16679-1259-4811-B2A8-1BDFB4276359}"
+	ProjectSection(SolutionItems) = preProject
+		tests\.editorconfig = tests\.editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0ED611E6-3827-44C8-98BC-6C66D29FA0D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{044958B4-13C7-4AC7-B77A-E7C8CBC4F9A3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{501C4368-A649-4C2C-9527-61F5CE45A6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{501C4368-A649-4C2C-9527-61F5CE45A6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{501C4368-A649-4C2C-9527-61F5CE45A6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{501C4368-A649-4C2C-9527-61F5CE45A6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2} = {95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15}
+		{54A0B55A-CC26-48E4-AECC-B861C22D64F4} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{F2ED51E3-BAF7-4E5D-9E5A-E4F350B83C55} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{A54F1738-806E-4655-871E-57BE789F9BA9} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{501C4368-A649-4C2C-9527-61F5CE45A6E1} = {A54F1738-806E-4655-871E-57BE789F9BA9}
+		{A3C16679-1259-4811-B2A8-1BDFB4276359} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
