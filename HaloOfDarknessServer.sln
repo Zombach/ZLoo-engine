@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # 17
 VisualStudioVersion = 17.11.35103.136
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0ED611E6-3827-44C8-98BC-6C66D29FA0D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{044958B4-13C7-4AC7-B77A-E7C8CBC4F9A3}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A731584-32E6-430E-8BF1-BB58CACD75F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15}"
@@ -19,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\Shared\Models
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45766CBD-D067-49F2-B1AA-2355519F4DA0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
@@ -28,14 +32,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		spelling.dic = spelling.dic
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A3C16679-1259-4811-B2A8-1BDFB4276359}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{775DA395-C54E-4166-A7A0-27D7466B4A5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{104C0297-2692-4F4F-BFDC-25C9A20DC010}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\backport.yml = .github\workflows\backport.yml
+		.github\workflows\locker.yml = .github\workflows\locker.yml
+		.github\workflows\markdownlint-problem-matcher.json = .github\workflows\markdownlint-problem-matcher.json
+		.github\workflows\markdownlint.yml = .github\workflows\markdownlint.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA8A4252-2766-4168-904B-823BA54F658C}"
 	ProjectSection(SolutionItems) = preProject
 		tests\.editorconfig = tests\.editorconfig
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0ED611E6-3827-44C8-98BC-6C66D29FA0D1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{044958B4-13C7-4AC7-B77A-E7C8CBC4F9A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,7 +72,10 @@ Global
 		{F2ED51E3-BAF7-4E5D-9E5A-E4F350B83C55} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
 		{A54F1738-806E-4655-871E-57BE789F9BA9} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
 		{501C4368-A649-4C2C-9527-61F5CE45A6E1} = {A54F1738-806E-4655-871E-57BE789F9BA9}
-		{A3C16679-1259-4811-B2A8-1BDFB4276359} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{104C0297-2692-4F4F-BFDC-25C9A20DC010} = {775DA395-C54E-4166-A7A0-27D7466B4A5C}
+		{DA8A4252-2766-4168-904B-823BA54F658C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{775DA395-C54E-4166-A7A0-27D7466B4A5C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{1C93E189-BEF3-4D0A-9A2E-92E0EB1C2BAF} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
