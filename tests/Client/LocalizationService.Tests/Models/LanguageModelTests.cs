@@ -10,11 +10,11 @@ public class LanguageModelTests
     {
         var sections = new Dictionary<string, LanguageSectionModel>();
         var language = new LanguageModel(sections);
-        const string expected = "sectionKey";
+        const string expected = "name";
         const string key = "Dummy";
-        string sectionKey = null!;
+        string name = null!;
 
-        var func = () => language[sectionKey, key];
+        var func = () => language[name, key];
         func.Should().Throw<ArgumentNullException>().And.ParamName.Should().Be(expected);
     }
 
@@ -24,10 +24,10 @@ public class LanguageModelTests
         var sections = new Dictionary<string, LanguageSectionModel>();
         var language = new LanguageModel(sections);
         const string expected = "key";
-        const string sectionKey = "Dummy";
+        const string name = "Dummy";
         string key = null!;
 
-        var func = () => language[sectionKey, key];
+        var func = () => language[name, key];
         func.Should().Throw<ArgumentNullException>().And.ParamName.Should().Be(expected);
     }
 }

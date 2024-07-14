@@ -15,13 +15,13 @@ namespace LocalizationService.Models
             _sections = sections;
         }
 
-        public string? this[string sectionKey, string key]
+        public string? this[string name, string key]
         {
             get
             {
-                if (sectionKey is null)
+                if (name is null)
                 {
-                    throw new ArgumentNullException(nameof(sectionKey));
+                    throw new ArgumentNullException(nameof(name));
                 }
 
                 if (key is null)
@@ -29,13 +29,13 @@ namespace LocalizationService.Models
                     throw new ArgumentNullException(nameof(key));
                 }
 
-                if (_sections.TryGetValue(sectionKey, out var section))
+                if (_sections.TryGetValue(name, out var section))
                 {
-                    _logger.Debug("By sectionKey {@sectionKey}, section received: {@section}", sectionKey, section);
+                    _logger.Debug("By name {@name}, section received: {@section}", name, section);
                 }
                 else
                 {
-                    _logger.Debug("By sectionKey {@sectionKey}, section not found", sectionKey);
+                    _logger.Debug("By name {@name}, section not found", name);
                 }
 
                 return section?[key];

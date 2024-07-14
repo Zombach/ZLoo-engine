@@ -1,13 +1,14 @@
 using System.Collections.Generic;
+using LocalizationService.Models.Enums;
 
 #pragma warning disable CA2227
 
-namespace LocalizationService
+namespace LocalizationService.Options
 {
     public class LocalizationOptions
     {
         public const string SectionKey = nameof(LocalizationOptions);
 
-        public ICollection<string>? Directories { get; set; }
+        public IDictionary<Languages, string> Languages { get; set; }
     }
 }

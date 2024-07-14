@@ -1,4 +1,5 @@
 using System;
+using LocalizationService.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
