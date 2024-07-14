@@ -43,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\backport.yml = .github\workflows\backport.yml
 		.github\workflows\locker.yml = .github\workflows\locker.yml
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
 		.github\workflows\markdownlint-problem-matcher.json = .github\workflows\markdownlint-problem-matcher.json
 		.github\workflows\markdownlint.yml = .github\workflows\markdownlint.yml
 	EndProjectSection
