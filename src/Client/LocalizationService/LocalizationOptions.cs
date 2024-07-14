@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Localizer
+namespace LocalizationService
 {
     public class LocalizationOptions
     {

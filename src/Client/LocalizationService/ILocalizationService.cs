@@ -1,6 +1,6 @@
 using System;
 
-namespace Localizer
+namespace LocalizationService
 {
     public interface ILocalizationService
     {

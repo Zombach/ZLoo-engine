@@ -1,4 +1,4 @@
-namespace Localizer.Models.Enums
+namespace LocalizationService.Models.Enums
 {
     public enum Languages
     {

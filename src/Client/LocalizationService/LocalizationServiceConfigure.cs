@@ -2,7 +2,7 @@ using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Localizer
+namespace LocalizationService
 {
     public static class LocalizationServiceConfigure
     {
