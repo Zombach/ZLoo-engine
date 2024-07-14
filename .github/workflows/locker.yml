@@ -7,9 +7,11 @@ on:
     # Manual triggering through the GitHub UI, API, or CLI
     inputs:
       daysSinceClose:
+        description: "close"
         required: true
         default: "30"
       daysSinceUpdate:
+        description: "update"
         required: true
         default: "30"
 
