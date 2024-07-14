@@ -16,9 +16,6 @@ namespace MemoryCacheService
 
         public void SetValue<TCacheKey>(TCacheKey cacheKey, TCacheValue cacheValue)
         {
-            _manualResetEventSlim.Wait();
-            _ = Interlocked.Increment(ref _recordersCount);
-
             if (cacheKey is null)
             {
                 throw new ArgumentNullException(nameof(cacheKey));
@@ -29,32 +26,49 @@ namespace MemoryCacheService
                 throw new ArgumentNullException(nameof(cacheValue));
             }
 
-            _ = _cache.Set(cacheKey, cacheValue);
-            _logger.Debug("For key: {@cacheKey}, set value: {@cacheValue}", cacheKey, cacheValue);
-            _ = Interlocked.Decrement(ref _recordersCount);
+            _manualResetEventSlim.Wait();
+            try
+            {
+                _ = Interlocked.Increment(ref _recordersCount);
+
+                _ = _cache.Set(cacheKey, cacheValue);
+                _logger.Debug("For key: {@cacheKey}, set value: {@cacheValue}", cacheKey, cacheValue);
+            }
+            finally
+            {
+                _ = Interlocked.Decrement(ref _recordersCount);
+            }
         }
 
         public TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey)
         {
-            _manualResetEventSlim.Wait();
-            _ = Interlocked.Increment(ref _recordersCount);
-
             if (cacheKey is null)
             {
                 throw new ArgumentNullException(nameof(cacheKey));
             }
 
-            if (_cache.TryGetValue(cacheKey, out TCacheValue? cacheValue))
+            _manualResetEventSlim.Wait();
+            try
             {
-                _logger.Debug("For key: {@cacheKey}, get value: {@cacheValue}", cacheKey, cacheValue);
-            }
-            else
-            {
-                _logger.Debug("For key: {@cacheKey}, value not found", cacheKey);
-            }
+                _ = Interlocked.Increment(ref _recordersCount);
 
-            _ = Interlocked.Decrement(ref _recordersCount);
-            return cacheValue;
+                if (_cache.TryGetValue(cacheKey, out TCacheValue? cacheValue))
+                {
+                    _logger.Debug("For key: {@cacheKey}, get value: {@cacheValue}", cacheKey, cacheValue);
+                }
+                else
+                {
+                    _logger.Debug("For key: {@cacheKey}, value not found", cacheKey);
+                }
+                return cacheValue;
+            }
+            finally
+            {
+                if (_recordersCount > 0)
+                {
+                    _ = Interlocked.Decrement(ref _recordersCount);
+                }
+            }
         }
 
         public async Task CleanCache(CancellationToken cancellationToken)
