@@ -77,6 +77,7 @@ namespace MemoryCacheService
             if (disposing)
             {
                 _cache.Dispose();
+                _manualResetEventSlim.Dispose();
             }
         }
 
