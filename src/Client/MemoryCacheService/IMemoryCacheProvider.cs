@@ -1,3 +1,6 @@
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace MemoryCacheService
 {
     public interface IMemoryCacheProvider<TCacheValue>
@@ -7,6 +10,6 @@ namespace MemoryCacheService
 
         TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey);
 
-        void CleanCache();
+        Task CleanCache(CancellationToken cancellationToken);
     }
 }
