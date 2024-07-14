@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+#pragma warning disable CA2227
+
 namespace LocalizationService
 {
     public class LocalizationOptions
