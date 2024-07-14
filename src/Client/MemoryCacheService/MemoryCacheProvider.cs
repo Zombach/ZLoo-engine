@@ -1,49 +1,98 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
+using Serilog;
 
 namespace MemoryCacheService
 {
-    public sealed class MemoryCacheProvider<TValue> : IMemoryCacheProvider<TValue>, IDisposable
-        where TValue : class
+    public sealed class MemoryCacheProvider<TCacheValue> : IMemoryCacheProvider<TCacheValue>, IDisposable
+        where TCacheValue : class
     {
+        private readonly ILogger _logger = Log.ForContext<MemoryCacheProvider<TCacheValue>>();
+        private int _recordersCount;
+        private readonly ManualResetEventSlim _manualResetEventSlim = new ManualResetEventSlim(true);
         private readonly MemoryCache _cache = new MemoryCache(new MemoryCacheOptions());
 
-        public TValue? GetOrCreate(object key, Func<TValue> createItem)
+        public void SetValue<TCacheKey>(TCacheKey cacheKey, TCacheValue cacheValue)
         {
-            if (_cache.TryGetValue(key, out TValue? cacheEntry)) // Ищем ключ в кэше.
+            if (cacheKey is null)
             {
-                return cacheEntry;
+                throw new ArgumentNullException(nameof(cacheKey));
             }
 
-            // Ключ отсутствует в кэше, поэтому получаем данные.
-            cacheEntry = createItem();
+            if (cacheValue is null)
+            {
+                throw new ArgumentNullException(nameof(cacheValue));
+            }
 
-            // Сохраняем данные в кэше. 
-            _ = _cache.Set(key, cacheEntry);
-            return cacheEntry;
+            _manualResetEventSlim.Wait();
+            try
+            {
+                _ = Interlocked.Increment(ref _recordersCount);
+
+                _ = _cache.Set(cacheKey, cacheValue);
+                _logger.Debug("For key: {@cacheKey}, set value: {@cacheValue}", cacheKey, cacheValue);
+            }
+            finally
+            {
+                _ = Interlocked.Decrement(ref _recordersCount);
+            }
         }
 
-        public TValue? GetValue<TKey>(TKey key)
+        public TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey)
         {
-            return key is null ? throw new ArgumentNullException(nameof(key)) :
-                _cache.TryGetValue(key, out TValue? value)
-                    ? value
-                    : null;
+            if (cacheKey is null)
+            {
+                throw new ArgumentNullException(nameof(cacheKey));
+            }
+
+            _manualResetEventSlim.Wait();
+            try
+            {
+                _ = Interlocked.Increment(ref _recordersCount);
+
+                if (_cache.TryGetValue(cacheKey, out TCacheValue? cacheValue))
+                {
+                    _logger.Debug("For key: {@cacheKey}, get value: {@cacheValue}", cacheKey, cacheValue);
+                }
+                else
+                {
+                    _logger.Debug("For key: {@cacheKey}, value not found", cacheKey);
+                }
+                return cacheValue;
+            }
+            finally
+            {
+                if (_recordersCount > 0)
+                {
+                    _ = Interlocked.Decrement(ref _recordersCount);
+                }
+            }
         }
 
-        public void CleanCache()
+        public async Task CleanCache(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            _manualResetEventSlim.Reset();
+
+            while (_recordersCount != 0)
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(50), cancellationToken);
+            }
+
+            _cache.Clear();
+            _logger.Debug("Memory Cache cleared");
+
+            _manualResetEventSlim.Set();
         }
 
         private void Dispose(bool disposing)
         {
             if (disposing)
             {
-                // Dispose managed resources.
                 _cache.Dispose();
+                _manualResetEventSlim.Dispose();
             }
-            // Free native resources.
         }
 
         public void Dispose()

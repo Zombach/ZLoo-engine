@@ -1,10 +1,15 @@
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace MemoryCacheService
 {
-    public interface IMemoryCacheProvider<out TValue>
-        where TValue : class
+    public interface IMemoryCacheProvider<TCacheValue>
+        where TCacheValue : class
     {
-        TValue? GetValue<TKey>(TKey key);
+        void SetValue<TCacheKey>(TCacheKey cacheKey, TCacheValue cacheValue);
 
-        void CleanCache();
+        TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey);
+
+        Task CleanCache(CancellationToken cancellationToken);
     }
 }

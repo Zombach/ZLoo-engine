@@ -104,7 +104,6 @@ end_of_line = lf
 charset = utf-8-bom
 
 [*.{cs,vb}]
-
 # SYSLIB1054: Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
 dotnet_diagnostic.SYSLIB1054.severity = warning
 
@@ -242,7 +241,7 @@ dotnet_diagnostic.CA1857.severity = warning
 dotnet_diagnostic.CA1858.severity = warning
 
 # CA2007: Consider calling ConfigureAwait on the awaited task
-dotnet_diagnostic.CA2007.severity = warning
+dotnet_diagnostic.CA2007.severity = silent
 
 # CA2008: Do not create tasks without passing a TaskScheduler
 dotnet_diagnostic.CA2008.severity = warning
@@ -349,7 +348,7 @@ dotnet_diagnostic.IDE0200.severity = warning
 dotnet_style_allow_multiple_blank_lines_experimental = false
 dotnet_diagnostic.IDE2000.severity = warning
 
-[{eng/tools/**.cs,**/{test,testassets,samples,Samples,perf,benchmarkapps,scripts,stress}/**.cs,src/Hosting/Server.IntegrationTesting/**.cs,src/Servers/IIS/IntegrationTesting.IIS/**.cs,src/Shared/Http2cat/**.cs,src/Testing/**.cs}]
+[{tests/**.cs}]
 # CA1018: Mark attributes with AttributeUsageAttribute
 dotnet_diagnostic.CA1018.severity = suggestion
 # CA1507: Use nameof to express symbol names
@@ -415,7 +414,7 @@ dotnet_diagnostic.CA1857.severity = suggestion
 # CA1858: Use 'StartsWith' instead of 'IndexOf'
 dotnet_diagnostic.CA1858.severity = suggestion
 # CA2007: Consider calling ConfigureAwait on the awaited task
-dotnet_diagnostic.CA2007.severity = suggestion
+dotnet_diagnostic.CA2007.severity = silent
 # CA2008: Do not create tasks without passing a TaskScheduler
 dotnet_diagnostic.CA2008.severity = suggestion
 # CA2012: Use ValueTask correctly
@@ -448,30 +447,5 @@ dotnet_diagnostic.IDE0060.severity = suggestion
 dotnet_diagnostic.IDE0062.severity = suggestion
 # IDE0200: Lambda expression can be removed
 dotnet_diagnostic.IDE0200.severity = suggestion
-
 # CA2016: Forward the 'CancellationToken' parameter to methods that take one
 dotnet_diagnostic.CA2016.severity = suggestion
-
-# Defaults for content in the shared src/ and shared runtime dir
-
-[{**/Shared/runtime/**.{cs,vb},src/Shared/test/Shared.Tests/runtime/**.{cs,vb},**/microsoft.extensions.hostfactoryresolver.sources/**.{cs,vb}}]
-# CA1822: Make member static
-dotnet_diagnostic.CA1822.severity = silent
-# IDE0011: Use braces
-dotnet_diagnostic.IDE0011.severity = silent
-# IDE0055: Fix formatting
-dotnet_diagnostic.IDE0055.severity = silent
-# IDE0060: Remove unused parameters
-dotnet_diagnostic.IDE0060.severity = silent
-# IDE0062: Make local function static
-dotnet_diagnostic.IDE0062.severity = silent
-# IDE0161: Convert to file-scoped namespace
-dotnet_diagnostic.IDE0161.severity = silent
-
-[{**/Shared/**.cs,**/microsoft.extensions.hostfactoryresolver.sources/**.{cs,vb}}]
-# IDE0005: Remove unused usings. Ignore for shared src files since imports for those depend on the projects in which they are included.
-dotnet_diagnostic.IDE0005.severity = silent
-
-[{*.razor.cs,src/Aspire.Dashboard/Components/**.cs}]
-# CA2007: Consider calling ConfigureAwait on the awaited task
-dotnet_diagnostic.CA2007.severity = silent
