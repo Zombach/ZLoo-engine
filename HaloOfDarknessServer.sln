@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A731584-32E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizer", "src\Client\Localizer\Localizer.csproj", "{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationService", "src\Client\LocalizationService\LocalizationService.csproj", "{CA8964F6-C78D-4D4F-8478-AE92D0BD43D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheService", "src\Client\MemoryCacheService\MemoryCacheService.csproj", "{0C1DE592-3C9C-49E5-84C0-BA21E2DC03D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryCacheService", "src\Client\MemoryCacheService\MemoryCacheService.csproj", "{0C1DE592-3C9C-49E5-84C0-BA21E2DC03D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{54A0B55A-CC26-48E4-AECC-B861C22D64F4}"
 EndProject
@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models.Tests", "tests\Share
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{1ECFAD8D-28C8-44CA-8D15-28C4F5E5627A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheService.Tests", "tests\Client\MemoryCacheService.Tests\MemoryCacheService.Tests.csproj", "{17C516EB-82DC-4D33-894B-223E2D01DF78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryCacheService.Tests", "tests\Client\MemoryCacheService.Tests\MemoryCacheService.Tests.csproj", "{17C516EB-82DC-4D33-894B-223E2D01DF78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
 	ProjectSection(SolutionItems) = preProject
@@ -57,6 +57,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\markdownlint-problem-matcher.json = .github\workflows\markdownlint-problem-matcher.json
 		.github\workflows\markdownlint.yml = .github\workflows\markdownlint.yml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA8A4252-2766-4168-904B-823BA54F658C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationService.Tests", "tests\Client\LocalizationService.Tests\LocalizationService.Tests.csproj", "{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +88,10 @@ Global
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +110,8 @@ Global
 		{17C516EB-82DC-4D33-894B-223E2D01DF78} = {1ECFAD8D-28C8-44CA-8D15-28C4F5E5627A}
 		{775DA395-C54E-4166-A7A0-27D7466B4A5C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
 		{104C0297-2692-4F4F-BFDC-25C9A20DC010} = {775DA395-C54E-4166-A7A0-27D7466B4A5C}
+		{DA8A4252-2766-4168-904B-823BA54F658C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE} = {1ECFAD8D-28C8-44CA-8D15-28C4F5E5627A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
