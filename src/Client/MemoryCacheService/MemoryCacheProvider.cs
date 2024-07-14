@@ -3,47 +3,60 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace MemoryCacheService
 {
-    public sealed class MemoryCacheProvider<TValue> : IMemoryCacheProvider<TValue>, IDisposable
-        where TValue : class
+    public sealed class MemoryCacheProvider<TCacheValue> : IMemoryCacheProvider<TCacheValue>, IDisposable
+        where TCacheValue : class
     {
         private readonly MemoryCache _cache = new MemoryCache(new MemoryCacheOptions());
 
-        public TValue? GetOrCreate(object key, Func<TValue> createItem)
+        //public TCacheValue? GetOrCreate(object key, Func<TCacheValue> createItem)
+        //{
+        //    if (_cache.TryGetValue(key, out TCacheValue? cacheEntry)) // Ищем ключ в кэше.
+        //    {
+        //        return cacheEntry;
+        //    }
+
+        //    // Ключ отсутствует в кэше, поэтому получаем данные.
+        //    cacheEntry = createItem();
+
+        //    // Сохраняем данные в кэше. 
+        //    _ = _cache.Set(key, cacheEntry);
+        //    return cacheEntry;
+        //}
+
+        public void SetValue<TCacheKey>(TCacheKey cacheKey, TCacheValue cacheValue)
         {
-            if (_cache.TryGetValue(key, out TValue? cacheEntry)) // Ищем ключ в кэше.
+            if (cacheKey is null)
             {
-                return cacheEntry;
+                throw new ArgumentNullException(nameof(cacheKey));
             }
 
-            // Ключ отсутствует в кэше, поэтому получаем данные.
-            cacheEntry = createItem();
+            if (cacheValue is null)
+            {
+                throw new ArgumentNullException(nameof(cacheValue));
+            }
 
-            // Сохраняем данные в кэше. 
-            _ = _cache.Set(key, cacheEntry);
-            return cacheEntry;
+            _ = _cache.Set(cacheKey, cacheValue);
         }
 
-        public TValue? GetValue<TKey>(TKey key)
+        public TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey)
         {
-            return key is null ? throw new ArgumentNullException(nameof(key)) :
-                _cache.TryGetValue(key, out TValue? value)
-                    ? value
+            return cacheKey is null ? throw new ArgumentNullException(nameof(cacheKey))
+                : _cache.TryGetValue(cacheKey, out TCacheValue? cacheValue)
+                    ? cacheValue
                     : null;
         }
 
         public void CleanCache()
         {
-            throw new NotImplementedException();
+            _cache.Clear();
         }
 
         private void Dispose(bool disposing)
         {
             if (disposing)
             {
-                // Dispose managed resources.
                 _cache.Dispose();
             }
-            // Free native resources.
         }
 
         public void Dispose()

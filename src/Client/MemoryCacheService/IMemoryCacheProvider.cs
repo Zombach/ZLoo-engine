@@ -1,9 +1,11 @@
 namespace MemoryCacheService
 {
-    public interface IMemoryCacheProvider<out TValue>
-        where TValue : class
+    public interface IMemoryCacheProvider<TCacheValue>
+        where TCacheValue : class
     {
-        TValue? GetValue<TKey>(TKey key);
+        void SetValue<TCacheKey>(TCacheKey cacheKey, TCacheValue cacheValue);
+
+        TCacheValue? GetValue<TCacheKey>(TCacheKey cacheKey);
 
         void CleanCache();
     }
