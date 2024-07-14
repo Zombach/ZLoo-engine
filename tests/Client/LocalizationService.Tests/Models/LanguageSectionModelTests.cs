@@ -8,7 +8,7 @@ public class LanguageSectionModelTests
     [Fact]
     public void Should_throw_when_key_is_null()
     {
-        var section = new Dictionary<string, string?>();
+        var section = new Dictionary<string, string>();
         var languageSection = new LanguageSectionModel(section);
         const string expected = "key";
         string key = null!;

@@ -1,15 +1,40 @@
+using System.Collections.ObjectModel;
 using FluentAssertions;
 using LocalizationService.Models;
+using LocalizationService.Models.SourceXml;
 
 namespace LocalizationService.Tests.Models;
 
 public class LanguageModelTests
 {
+    private readonly Source _source = new()
+    {
+        Language = "Russian",
+        Sections = new Sections
+        {
+            Count = "1",
+            SectionCollection = new Collection<Section>(
+            [
+                new()
+                {
+                    Name = "Test",
+                    ItemCollection = new Collection<Item>(
+                    [
+                        new()
+                        {
+                            Key = "1",
+                            Value = "Text"
+                        }
+                    ])
+                }
+            ])
+        }
+    };
+
     [Fact]
     public void Should_throw_when_section_key_is_null()
     {
-        var sections = new Dictionary<string, LanguageSectionModel>();
-        var language = new LanguageModel(sections);
+        var language = new LanguageModel(_source);
         const string expected = "name";
         const string key = "Dummy";
         string name = null!;
@@ -21,8 +46,7 @@ public class LanguageModelTests
     [Fact]
     public void Should_throw_when_key_is_null()
     {
-        var sections = new Dictionary<string, LanguageSectionModel>();
-        var language = new LanguageModel(sections);
+        var language = new LanguageModel(_source);
         const string expected = "key";
         const string name = "Dummy";
         string key = null!;

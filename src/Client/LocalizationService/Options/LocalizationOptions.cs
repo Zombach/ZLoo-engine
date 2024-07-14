@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using LocalizationService.Models.Enums;
-
-#pragma warning disable CA2227
+using System.ComponentModel.DataAnnotations;
 
 namespace LocalizationService.Options
 {
@@ -9,6 +6,6 @@ namespace LocalizationService.Options
     {
         public const string SectionKey = nameof(LocalizationOptions);
 
-        public IDictionary<Languages, string> Languages { get; set; }
+        [Required] public string Directory { get; set; } = null!;
     }
 }

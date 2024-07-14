@@ -15,18 +15,18 @@ namespace LocalizationService.Models.SourceXml
         private const string CountAttribute = "count";
         private const string SectionElement = nameof(Section);
 
-        private string? _count;
-        private Collection<Section>? _sectionCollection;
+        private string _count = null!;
+        private Collection<Section> _sectionCollection = null!;
 
         [XmlAttribute(AttributeName = CountAttribute)]
-        public string? Count
+        public string Count
         {
             get => _count;
             set => _count = value;
         }
 
         [XmlElement(ElementName = SectionElement)]
-        public Collection<Section>? SectionCollection
+        public Collection<Section> SectionCollection
         {
             get => _sectionCollection;
             set => _sectionCollection = value;

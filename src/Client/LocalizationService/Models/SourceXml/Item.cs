@@ -11,18 +11,18 @@ namespace LocalizationService.Models.SourceXml
     {
         private const string KeyAttribute = "key";
 
-        private string? _key;
-        private string? _value;
+        private string _key = null!;
+        private string _value = null!;
 
         [XmlAttribute(AttributeName = KeyAttribute)]
-        public string? Key
+        public string Key
         {
             get => _key;
             set => _key = value;
         }
 
         [XmlText]
-        public string? Value
+        public string Value
         {
             get => _value;
             set => _value = value;

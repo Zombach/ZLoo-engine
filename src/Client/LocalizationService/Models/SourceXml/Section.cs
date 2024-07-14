@@ -15,18 +15,18 @@ namespace LocalizationService.Models.SourceXml
         private const string NameAttribute = "name";
         private const string ItemElement = "Item";
 
-        private string? _name;
-        private Collection<Item>? _itemCollection;
+        private string _name = null!;
+        private Collection<Item> _itemCollection = null!;
 
         [XmlAttribute(AttributeName = NameAttribute)]
-        public string? Name
+        public string Name
         {
             get => _name;
             set => _name = value;
         }
 
         [XmlElement(ElementName = ItemElement)]
-        public Collection<Item>? ItemCollection
+        public Collection<Item> ItemCollection
         {
             get => _itemCollection;
             set => _itemCollection = value;

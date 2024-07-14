@@ -12,18 +12,18 @@ namespace LocalizationService.Models.SourceXml
     {
         private const string LanguageAttribute = "language";
 
-        private string? _language;
-        private Sections? _sections;
+        private string _language = null!;
+        private Sections _sections = null!;
 
         [XmlAttribute(AttributeName = LanguageAttribute)]
-        public string? Language
+        public string Language
         {
             get => _language;
             set => _language = value;
         }
 
         [XmlElement(ElementName = nameof(Sections))]
-        public Sections? Sections
+        public Sections Sections
         {
             get => _sections;
             set => _sections = value;

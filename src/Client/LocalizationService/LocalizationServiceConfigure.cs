@@ -17,7 +17,7 @@ namespace LocalizationService
             _ = services.AddOptionsWithValidateOnStart<LocalizationOptions>()
                 .Bind(configuration.GetSection(LocalizationOptions.SectionKey));
 
-            return services.AddSingleton<ILocalizationService, LocalizationService>();
+            return services.AddSingleton<ILocalizationProvider, LocalizationProvider>();
         }
     }
 }
