@@ -8,7 +8,7 @@ public class LanguageModelTests
     [Fact]
     public void Should_throw_when_section_key_is_null()
     {
-        IDictionary<string, LanguageSectionModel> sections = new Dictionary<string, LanguageSectionModel>();
+        var sections = new Dictionary<string, LanguageSectionModel>();
         var language = new LanguageModel(sections);
         const string expected = "sectionKey";
         const string key = "Dummy";
@@ -21,7 +21,7 @@ public class LanguageModelTests
     [Fact]
     public void Should_throw_when_key_is_null()
     {
-        IDictionary<string, LanguageSectionModel> sections = new Dictionary<string, LanguageSectionModel>();
+        var sections = new Dictionary<string, LanguageSectionModel>();
         var language = new LanguageModel(sections);
         const string expected = "key";
         const string sectionKey = "Dummy";
