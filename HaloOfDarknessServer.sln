@@ -60,6 +60,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA8A4252-2766-4168-904B-823BA54F658C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationService.Tests", "tests\Client\LocalizationService.Tests\LocalizationService.Tests.csproj", "{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17C516EB-82DC-4D33-894B-223E2D01DF78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{775DA395-C54E-4166-A7A0-27D7466B4A5C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
 		{104C0297-2692-4F4F-BFDC-25C9A20DC010} = {775DA395-C54E-4166-A7A0-27D7466B4A5C}
 		{DA8A4252-2766-4168-904B-823BA54F658C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE} = {1ECFAD8D-28C8-44CA-8D15-28C4F5E5627A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}

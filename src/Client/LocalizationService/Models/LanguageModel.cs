@@ -8,9 +8,9 @@ namespace LocalizationService.Models
     {
         private readonly ILogger _logger = Log.ForContext<LanguageModel>();
 
-        private readonly IDictionary<string, SectionModel> _sections;
+        private readonly IDictionary<string, LanguageSectionModel> _sections;
 
-        public LanguageModel(IDictionary<string, SectionModel> sections)
+        public LanguageModel(IDictionary<string, LanguageSectionModel> sections)
         {
             _sections = sections;
         }

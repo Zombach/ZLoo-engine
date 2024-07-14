@@ -4,13 +4,13 @@ using Serilog;
 
 namespace LocalizationService.Models
 {
-    public class SectionModel
+    public class LanguageSectionModel
     {
-        private readonly ILogger _logger = Log.ForContext<SectionModel>();
+        private readonly ILogger _logger = Log.ForContext<LanguageSectionModel>();
 
         private readonly IDictionary<string, string> _section;
 
-        public SectionModel(IDictionary<string, string> section)
+        public LanguageSectionModel(IDictionary<string, string> section)
         {
             _section = section;
         }
