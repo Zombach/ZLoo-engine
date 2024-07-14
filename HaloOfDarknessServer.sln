@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		.markdownlint.json = .markdownlint.json
+		.markdownlintignore = .markdownlintignore
 		Readme.md = Readme.md
 		spelling.dic = spelling.dic
 	EndProjectSection
