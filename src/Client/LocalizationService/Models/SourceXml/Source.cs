@@ -19,14 +19,14 @@ namespace LocalizationService.Models.SourceXml
         public string Language
         {
             get => _language;
-            set => _language = value;
+            set => _language = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         [XmlElement(ElementName = nameof(Sections))]
         public Sections Sections
         {
             get => _sections;
-            set => _sections = value;
+            set => _sections = value ?? throw new ArgumentNullException(nameof(value));
         }
     }
 }
