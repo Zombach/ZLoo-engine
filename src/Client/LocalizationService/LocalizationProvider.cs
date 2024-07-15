@@ -36,9 +36,10 @@ namespace LocalizationService
                 using var streamReader = new StreamReader(path);
                 using var reader = XmlReader.Create(streamReader);
                 var serializer = new XmlSerializer(typeof(Source));
+
                 if (!(serializer.Deserialize(reader) is Source source))
                 {
-                    throw new ArgumentNullException(nameof(source));
+                    throw new InvalidOperationException(nameof(source));
                 }
 
                 var language = new LanguageModel(source);

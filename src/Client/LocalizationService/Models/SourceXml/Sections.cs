@@ -22,14 +22,14 @@ namespace LocalizationService.Models.SourceXml
         public string Count
         {
             get => _count;
-            set => _count = value;
+            set => _count = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         [XmlElement(ElementName = SectionElement)]
         public Collection<Section> SectionCollection
         {
             get => _sectionCollection;
-            set => _sectionCollection = value;
+            set => _sectionCollection = value ?? throw new ArgumentNullException(nameof(value));
         }
     }
 }

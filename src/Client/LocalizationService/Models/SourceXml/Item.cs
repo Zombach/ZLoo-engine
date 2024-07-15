@@ -18,14 +18,14 @@ namespace LocalizationService.Models.SourceXml
         public string Key
         {
             get => _key;
-            set => _key = value;
+            set => _key = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         [XmlText]
         public string Value
         {
             get => _value;
-            set => _value = value;
+            set => _value = value ?? throw new ArgumentNullException(nameof(value));
         }
     }
 }
