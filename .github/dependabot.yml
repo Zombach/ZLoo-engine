@@ -62,6 +62,14 @@ updates:
       Polly:
         patterns:
           - "Polly.*"
+      Serilog:
+        patterns:
+          - "Serilog.*"
+      Tests:
+        patterns:
+          - "Microsoft.NET.Test.*"
+          - "FluentAssertions*"
+          - "xunit*"
     labels:
       - "area-codeflow"
 
