@@ -9,53 +9,29 @@ updates:
     registries:
       - public-nuget
     schedule:
-      day: monday
-      interval: weekly
-      time: "07:00"
-      timezone: "America/Los_Angeles"
+      interval: daily
+      time: "12:00"
+      timezone: "Europe/Moscow"
     open-pull-requests-limit: 15
-    ignore:
-      # handled by Darc/Maestro flows
-      - dependency-name: "Microsoft.DotNet.Arcade.Sdk"
-      - dependency-name: "Microsoft.DotNet.Helix.Sdk"
-      - dependency-name: "Microsoft.DotNet.SharedFramework.Sdk"
-      - dependency-name: "Microsoft.Build.NoTargets"
     groups:
-      Azure:
-        patterns:
-          - "Azure.*"
-          - "Microsoft.Azure.*"
-          - "Microsoft.Extensions.Azure"
       AspNetCoreHealthChecks:
         patterns:
-          - "AspNetCore.HealthChecks.*"
+          - "AspNetCore.HealthChecks*"
       AspNetCore:
         patterns:
-          - "Microsoft.AspNetCore.*"
-          - "Microsoft.Extensions.Features"
-      AWS:
-        patterns:
-          - "AWS.*"
-          - "AWSSDK.*"
-          - "OpenTelemetry.*.AWS"
+          - "Microsoft.AspNetCore*"
       MicrosoftExtensions:
         patterns:
-          - "Microsoft.Extensions.*"
+          - "Microsoft.Extensions*"
       EntityFrameworkCore:
         patterns:
-          - "Microsoft.EntityFrameworkCore.*"
-      FluentUi:
-        patterns:
-          - "Microsoft.FluentUI.*"
+          - "Microsoft.EntityFrameworkCore*"
       OpenTelemetry:
         patterns:
-          - "OpenTelemetry.*"
-      Npgsql:
-        patterns:
-          - "Npgsql.*"
+          - "OpenTelemetry*"
       MicrosoftDotNet:
         patterns:
-          - "Microsoft.DotNet.*"
+          - "Microsoft.DotNet*"
       Grpc:
         patterns:
           - "Grpc.*"
@@ -64,12 +40,14 @@ updates:
           - "Polly.*"
       Serilog:
         patterns:
-          - "Serilog.*"
+          - "Serilog*"
       Tests:
         patterns:
-          - "Microsoft.NET.Test.*"
-          - "FluentAssertions*"
+          - "Microsoft.NET.Test*"
           - "xunit*"
+      Fluent:
+        patterns:
+          - "Fluent*"
     labels:
       - "area-codeflow"
 
