@@ -60,7 +60,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA8A4252-2766-4168-904B-823BA54F658C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationService.Tests", "tests\Client\LocalizationService.Tests\LocalizationService.Tests.csproj", "{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationService.Tests", "tests\Client\LocalizationService.Tests\LocalizationService.Tests.csproj", "{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", "{B236840F-ED45-4552-B008-831E5440DD15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConverterService", "src\Client\Converters\JsonConverterService\JsonConverterService.csproj", "{69C7418E-E63F-4792-B641-C2788B0C2B11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +96,10 @@ Global
 		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C7418E-E63F-4792-B641-C2788B0C2B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C7418E-E63F-4792-B641-C2788B0C2B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C7418E-E63F-4792-B641-C2788B0C2B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C7418E-E63F-4792-B641-C2788B0C2B11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +120,8 @@ Global
 		{104C0297-2692-4F4F-BFDC-25C9A20DC010} = {775DA395-C54E-4166-A7A0-27D7466B4A5C}
 		{DA8A4252-2766-4168-904B-823BA54F658C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
 		{CAD6FAED-1E6E-4E47-B546-EE55247DC2DE} = {1ECFAD8D-28C8-44CA-8D15-28C4F5E5627A}
+		{B236840F-ED45-4552-B008-831E5440DD15} = {95D9D4EC-D682-4BC3-9BF1-44EC5D4BCF15}
+		{69C7418E-E63F-4792-B641-C2788B0C2B11} = {B236840F-ED45-4552-B008-831E5440DD15}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
