@@ -12,7 +12,7 @@ public class JsonConverterProviderTests
         var testConverter = new TestConverter();
         string[] model = null!;
 
-        Action action = () => testConverter.ToJson(model);
+        var action = () => testConverter.ToJson(model);
 
         var exception = action.Should().Throw<ArgumentNullException>();
         exception.And.ParamName.Should().Be(nameof(model));
@@ -24,7 +24,7 @@ public class JsonConverterProviderTests
         var testConverter = new TestConverter();
         string json = null!;
 
-        Action action = () => testConverter.ToModel(json);
+        var action = () => testConverter.ToModel(json);
 
         var exception = action.Should().Throw<ArgumentNullException>();
         exception.And.ParamName.Should().Be(nameof(json));

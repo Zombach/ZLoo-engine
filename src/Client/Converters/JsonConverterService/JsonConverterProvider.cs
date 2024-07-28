@@ -1,8 +1,9 @@
 using System;
+using System.Text.Json;
 
 namespace JsonConverterService
 {
-    public abstract class JsonConverterProvider<TModel> : IJsonConverterProvider<TModel>
+    public abstract class JsonConverterProvider<TModel> : BaseJsonConverterProvider, IJsonConverterProvider<TModel>
         where TModel : class
     {
         public virtual string ToJson(TModel model)
@@ -12,7 +13,8 @@ namespace JsonConverterService
                 throw new ArgumentNullException(nameof(model));
             }
 
-            throw new NotImplementedException();
+            var json = JsonSerializer.Serialize(model, Options);
+            return json ?? throw new NotSupportedException(nameof(json));
         }
 
         public virtual TModel ToModel(string json)
@@ -22,7 +24,8 @@ namespace JsonConverterService
                 throw new ArgumentNullException(nameof(json));
             }
 
-            throw new NotImplementedException();
+            var model = JsonSerializer.Deserialize<TModel>(json, Options);
+            return model ?? throw new JsonException(nameof(model));
         }
     }
 }

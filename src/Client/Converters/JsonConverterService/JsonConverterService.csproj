@@ -8,4 +8,8 @@
     <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="9.0.0-preview.6.24327.7" />
+  </ItemGroup>
+
 </Project>
