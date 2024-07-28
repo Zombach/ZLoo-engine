@@ -1,5 +1,7 @@
 using System;
 using System.Text.Json;
+using JsonConverterService.Bases;
+using JsonConverterService.Interfaces;
 
 namespace JsonConverterService
 {

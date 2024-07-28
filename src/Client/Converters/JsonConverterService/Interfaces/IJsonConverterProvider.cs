@@ -1,4 +1,4 @@
-namespace JsonConverterService
+namespace JsonConverterService.Interfaces
 {
     public interface IJsonConverterProvider<TModel>
     {

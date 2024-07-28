@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace JsonConverterService
+namespace JsonConverterService.Interfaces
 {
     public interface IJsonConverterProviderAsync<TModel>
     {
