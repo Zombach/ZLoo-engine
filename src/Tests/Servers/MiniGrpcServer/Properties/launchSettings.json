@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MiniGrpcServer": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
