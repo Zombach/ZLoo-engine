@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package grpcmodels;
+
+option csharp_namespace = "GrpcModels.Protos";
+
+service TestGrpcService {
+  rpc TestConnected (Request) returns (Response) {}
+}
+
+message Request {
+  string name = 1;
+}
+
+message Response {
+  string message = 1;
+}
