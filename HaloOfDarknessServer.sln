@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 17
+# Visual Studio Version 17
 VisualStudioVersion = 17.11.35103.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0ED611E6-3827-44C8-98BC-6C66D29FA0D1}"
@@ -74,15 +74,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F554A7FD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{96EE3DCE-B105-4B03-A9A0-4472E158FB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniGrpcServer", "src\Tests\Servers\MiniGrpcServer\MiniGrpcServer.csproj", "{AF113CEC-10BA-44F0-A4FA-3E9F6C1326FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniGrpcServer", "src\Tests\Servers\MiniGrpcServer\MiniGrpcServer.csproj", "{AF113CEC-10BA-44F0-A4FA-3E9F6C1326FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EF6E02E7-BC52-4ADB-A659-2F016C0A2E53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcModels", "src\Tests\Shared\GrpcModels\GrpcModels.csproj", "{09340CAB-E0EA-40F8-82D5-1FC9A018FE14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcModels", "src\Tests\Shared\GrpcModels\GrpcModels.csproj", "{09340CAB-E0EA-40F8-82D5-1FC9A018FE14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService", "src\Tests\Client\GrpcService\GrpcService.csproj", "{3F9A8898-305D-4C92-9C24-57E6B47EFFB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcService", "src\Tests\Client\GrpcService\GrpcService.csproj", "{3F9A8898-305D-4C92-9C24-57E6B47EFFB8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C61F6F62-D28B-4F51-869E-2A2CA127A3C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceGenerators", "SourceGenerators", "{03374E56-1555-4163-8C37-8858D0E93636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpSourceGeneratorSamples", "src\SourceGenerators\SourceGeneratorSamples\CSharpSourceGeneratorSamples.csproj", "{8C166B61-2212-40BD-8D28-CB01F05315FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpGeneratedDemo", "src\SourceGenerators\GeneratedDemo\CSharpGeneratedDemo.csproj", "{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -134,6 +140,14 @@ Global
 		{3F9A8898-305D-4C92-9C24-57E6B47EFFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F9A8898-305D-4C92-9C24-57E6B47EFFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F9A8898-305D-4C92-9C24-57E6B47EFFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C166B61-2212-40BD-8D28-CB01F05315FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C166B61-2212-40BD-8D28-CB01F05315FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C166B61-2212-40BD-8D28-CB01F05315FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C166B61-2212-40BD-8D28-CB01F05315FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +179,9 @@ Global
 		{09340CAB-E0EA-40F8-82D5-1FC9A018FE14} = {EF6E02E7-BC52-4ADB-A659-2F016C0A2E53}
 		{3F9A8898-305D-4C92-9C24-57E6B47EFFB8} = {C61F6F62-D28B-4F51-869E-2A2CA127A3C5}
 		{C61F6F62-D28B-4F51-869E-2A2CA127A3C5} = {F554A7FD-FB4D-4F14-BDF8-EC3948C37C90}
+		{03374E56-1555-4163-8C37-8858D0E93636} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{8C166B61-2212-40BD-8D28-CB01F05315FD} = {03374E56-1555-4163-8C37-8858D0E93636}
+		{A1658231-0F98-4DA9-87D5-BE5ED6BFA1DB} = {03374E56-1555-4163-8C37-8858D0E93636}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
