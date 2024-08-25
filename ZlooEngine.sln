@@ -96,6 +96,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationService.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheService.Tests", "tests\Client\Services\MemoryCacheService.Tests\MemoryCacheService.Tests.csproj", "{5E66AF10-7B97-4DEC-B2DD-234EA2F4FBBC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{47992CAD-0D67-4279-A1DB-F2E9D7C4C8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForUnity", "libs\ForUnity\ForUnity.csproj", "{95AD94A0-E456-44BD-9552-201E9304B577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -154,6 +158,10 @@ Global
 		{5E66AF10-7B97-4DEC-B2DD-234EA2F4FBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E66AF10-7B97-4DEC-B2DD-234EA2F4FBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E66AF10-7B97-4DEC-B2DD-234EA2F4FBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95AD94A0-E456-44BD-9552-201E9304B577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AD94A0-E456-44BD-9552-201E9304B577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AD94A0-E456-44BD-9552-201E9304B577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AD94A0-E456-44BD-9552-201E9304B577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -191,6 +199,7 @@ Global
 		{61A7A582-4A39-46D3-84C6-3B38F98A043C} = {A14035D5-2A26-4442-8DD0-84C48A669919}
 		{C5A2CBD2-6997-4005-AA0D-ACDC30A8B372} = {E36BE1CB-5685-4974-AAA2-E17F06A9C038}
 		{5E66AF10-7B97-4DEC-B2DD-234EA2F4FBBC} = {E36BE1CB-5685-4974-AAA2-E17F06A9C038}
+		{95AD94A0-E456-44BD-9552-201E9304B577} = {47992CAD-0D67-4279-A1DB-F2E9D7C4C8AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
