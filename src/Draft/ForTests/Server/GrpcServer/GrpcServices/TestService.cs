@@ -1,7 +1,7 @@
 using Grpc.Core;
 using GrpcModels.Protos;
 
-namespace MiniGrpcServer.GrpcServices;
+namespace GrpcServer.GrpcServices;
 
 public class TestService : TestGrpcService.TestGrpcServiceBase
 {

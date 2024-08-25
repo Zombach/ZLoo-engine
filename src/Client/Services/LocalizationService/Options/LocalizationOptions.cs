@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace LocalizationService.Options
-{
-    public class LocalizationOptions
-    {
-        public const string SectionKey = nameof(LocalizationOptions);
+namespace LocalizationService.Options;
 
-        [Required] public string Directory { get; set; } = null!;
-    }
+public class LocalizationOptions
+{
+    public const string SectionKey = nameof(LocalizationOptions);
+
+    [Required] public string Directory { get; set; } = null!;
 }

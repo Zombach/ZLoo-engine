@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Grpc.Core;
 using GrpcModels.Protos;
 
-namespace GrpcService
+namespace GrpcClient
 {
     public class GrpcProvider : IDisposable
     {

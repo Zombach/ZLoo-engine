@@ -1,6 +1,6 @@
 using System;
 
-namespace Models.Exceptions
+namespace ExceptionModels.Exceptions
 {
     public class TestException : Exception
     {

@@ -1,9 +1,8 @@
-namespace LocalizationService.Models.Enums
+namespace LocalizationService.Models.Enums;
+
+public enum Languages
 {
-    public enum Languages
-    {
-        Unknown = default,
-        Russian = 1,
-        English = 2
-    }
+    Unknown = default,
+    Russian = 1,
+    English = 2
 }

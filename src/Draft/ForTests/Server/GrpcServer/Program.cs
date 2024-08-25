@@ -1,6 +1,6 @@
 using Grpc.Core;
 using GrpcModels.Protos;
-using MiniGrpcServer.GrpcServices;
+using GrpcServer.GrpcServices;
 
 Console.WriteLine("Hello, World!");
 

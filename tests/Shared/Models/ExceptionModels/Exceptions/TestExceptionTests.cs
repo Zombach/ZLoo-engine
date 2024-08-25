@@ -1,5 +1,5 @@
+using ExceptionModels.Exceptions;
 using FluentAssertions;
-using Models.Exceptions;
 
 namespace Models.Tests.Exceptions;
 
