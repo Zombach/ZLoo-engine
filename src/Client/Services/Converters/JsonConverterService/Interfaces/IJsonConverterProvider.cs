@@ -1,8 +1,7 @@
-namespace JsonConverterService.Interfaces
+namespace JsonConverterService.Interfaces;
+
+public interface IJsonConverterProvider<TModel>
 {
-    public interface IJsonConverterProvider<TModel>
-    {
-        string ToJson(TModel model);
-        TModel ToModel(string json);
-    }
+    string ToJson(TModel model);
+    TModel ToModel(string json);
 }

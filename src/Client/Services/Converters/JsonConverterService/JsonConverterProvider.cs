@@ -3,31 +3,30 @@ using System.Text.Json;
 using JsonConverterService.Bases;
 using JsonConverterService.Interfaces;
 
-namespace JsonConverterService
+namespace JsonConverterService;
+
+public abstract class JsonConverterProvider<TModel> : BaseJsonConverterProvider, IJsonConverterProvider<TModel>
+    where TModel : class
 {
-    public abstract class JsonConverterProvider<TModel> : BaseJsonConverterProvider, IJsonConverterProvider<TModel>
-        where TModel : class
+    public virtual string ToJson(TModel model)
     {
-        public virtual string ToJson(TModel model)
+        if (model is null)
         {
-            if (model is null)
-            {
-                throw new ArgumentNullException(nameof(model));
-            }
-
-            var json = JsonSerializer.Serialize(model, Options);
-            return json ?? throw new NotSupportedException(nameof(json));
+            throw new ArgumentNullException(nameof(model));
         }
 
-        public virtual TModel ToModel(string json)
-        {
-            if (json is null)
-            {
-                throw new ArgumentNullException(nameof(json));
-            }
+        var json = JsonSerializer.Serialize(model, Options);
+        return json ?? throw new NotSupportedException(nameof(json));
+    }
 
-            var model = JsonSerializer.Deserialize<TModel>(json, Options);
-            return model ?? throw new JsonException(nameof(model));
+    public virtual TModel ToModel(string json)
+    {
+        if (json is null)
+        {
+            throw new ArgumentNullException(nameof(json));
         }
+
+        var model = JsonSerializer.Deserialize<TModel>(json, Options);
+        return model ?? throw new JsonException(nameof(model));
     }
 }

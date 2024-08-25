@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 
-namespace CSharpGeneratedDemo
+namespace CSharpGeneratedDemo;
+
+public static class Program
 {
-    public static class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            // Run the various scenarios
-            Console.WriteLine("Running HelloWorld:\n");
-            UseHelloWorldGenerator.Run();
+        // Run the various scenarios
+        Console.WriteLine("Running HelloWorld:\n");
+        UseHelloWorldGenerator.Run();
 
-            Console.WriteLine("\n\nRunning AutoNotify:\n");
-            UseAutoNotifyGenerator.Run();
-        }
+        Console.WriteLine("\n\nRunning AutoNotify:\n");
+        UseAutoNotifyGenerator.Run();
     }
 }

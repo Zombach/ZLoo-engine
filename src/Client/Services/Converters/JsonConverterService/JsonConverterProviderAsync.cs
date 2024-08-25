@@ -6,33 +6,32 @@ using System.Threading.Tasks;
 using JsonConverterService.Bases;
 using JsonConverterService.Interfaces;
 
-namespace JsonConverterService
+namespace JsonConverterService;
+
+public abstract class JsonConverterProviderAsync<TModel> : BaseJsonConverterProvider, IJsonConverterProviderAsync<TModel>
+    where TModel : class
 {
-    public abstract class JsonConverterProviderAsync<TModel> : BaseJsonConverterProvider, IJsonConverterProviderAsync<TModel>
-        where TModel : class
+    public virtual async Task<Memory<byte>> ToJson(TModel model, CancellationToken cancellationToken)
     {
-        public virtual async Task<Memory<byte>> ToJson(TModel model, CancellationToken cancellationToken)
+        if (model is null)
         {
-            if (model is null)
-            {
-                throw new ArgumentNullException(nameof(model));
-            }
-
-            using var memoryStream = new MemoryStream();
-            await JsonSerializer.SerializeAsync(memoryStream, model, Options, cancellationToken);
-
-            return memoryStream.ToArray();
+            throw new ArgumentNullException(nameof(model));
         }
 
-        public virtual async Task<TModel> ToModel(Stream stream, CancellationToken cancellationToken)
-        {
-            if (stream is null)
-            {
-                throw new ArgumentNullException(nameof(stream));
-            }
+        using var memoryStream = new MemoryStream();
+        await JsonSerializer.SerializeAsync(memoryStream, model, Options, cancellationToken);
 
-            var model = await JsonSerializer.DeserializeAsync<TModel>(stream, Options, cancellationToken);
-            return model ?? throw new JsonException(nameof(model));
+        return memoryStream.ToArray();
+    }
+
+    public virtual async Task<TModel> ToModel(Stream stream, CancellationToken cancellationToken)
+    {
+        if (stream is null)
+        {
+            throw new ArgumentNullException(nameof(stream));
         }
+
+        var model = await JsonSerializer.DeserializeAsync<TModel>(stream, Options, cancellationToken);
+        return model ?? throw new JsonException(nameof(model));
     }
 }
