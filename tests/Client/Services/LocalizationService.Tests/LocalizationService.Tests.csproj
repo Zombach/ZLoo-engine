@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Client\MemoryCacheService\MemoryCacheService.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Client\Services\LocalizationService\LocalizationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>
