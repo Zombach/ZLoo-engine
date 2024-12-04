@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35103.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0ED611E6-3827-44C8-98BC-6C66D29FA0D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{044958B4-13C7-4AC7-B77A-E7C8CBC4F9A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{47992CAD-0D67-4279-A1DB-F2E9D7C4C8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "for-unity", "libs\for-unity\for-unity.csproj", "{04411BBA-D98E-4820-9D5B-E73B418D3FB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A731584-32E6-430E-8BF1-BB58CACD75F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45766CBD-D067-49F2-B1AA-2355519F4DA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutions", "solutions", "{F517289E-C8D9-4FC6-924C-E65BA8A541AD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.markdownlint.json = .markdownlint.json
+		.markdownlintignore = .markdownlintignore
+		Readme.md = Readme.md
+		spelling.dic = spelling.dic
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{775DA395-C54E-4166-A7A0-27D7466B4A5C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{104C0297-2692-4F4F-BFDC-25C9A20DC010}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\markdownlint-problem-matcher.json = .github\workflows\markdownlint-problem-matcher.json
+		.github\workflows\markdownlint.yml = .github\workflows\markdownlint.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shareds", "shareds", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc-models", "src\shareds\grpc-models\grpc-models.csproj", "{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "servers", "servers", "{47E01027-95AD-FE9B-F331-88CBB1DA9B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc-test-server", "src\servers\grpc-test-server\grpc-test-server.csproj", "{F92AAA4C-683A-7948-B043-66E2F9938F4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{36D593C7-65C4-A0E1-1CBC-10CDE431BDC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc-test-client", "src\clients\grpc-test-client\grpc-test-client.csproj", "{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92AAA4C-683A-7948-B043-66E2F9938F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92AAA4C-683A-7948-B043-66E2F9938F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92AAA4C-683A-7948-B043-66E2F9938F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92AAA4C-683A-7948-B043-66E2F9938F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04411BBA-D98E-4820-9D5B-E73B418D3FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04411BBA-D98E-4820-9D5B-E73B418D3FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04411BBA-D98E-4820-9D5B-E73B418D3FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04411BBA-D98E-4820-9D5B-E73B418D3FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{775DA395-C54E-4166-A7A0-27D7466B4A5C} = {F517289E-C8D9-4FC6-924C-E65BA8A541AD}
+		{104C0297-2692-4F4F-BFDC-25C9A20DC010} = {775DA395-C54E-4166-A7A0-27D7466B4A5C}
+		{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{6D517C9D-CBCE-4B1B-B7C9-CE8ACBE328DC} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{47E01027-95AD-FE9B-F331-88CBB1DA9B47} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{F92AAA4C-683A-7948-B043-66E2F9938F4B} = {47E01027-95AD-FE9B-F331-88CBB1DA9B47}
+		{36D593C7-65C4-A0E1-1CBC-10CDE431BDC5} = {5A731584-32E6-430E-8BF1-BB58CACD75F1}
+		{CCB4AAB9-2DE4-05DB-938F-00149B23F2E8} = {36D593C7-65C4-A0E1-1CBC-10CDE431BDC5}
+		{04411BBA-D98E-4820-9D5B-E73B418D3FB5} = {47992CAD-0D67-4279-A1DB-F2E9D7C4C8AB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6806214-BD56-491A-8491-7DDFD482AD27}
+	EndGlobalSection
+EndGlobal

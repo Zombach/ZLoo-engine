@@ -50,6 +50,9 @@ updates:
       Fluent:
         patterns:
           - "Fluent*"
+      All:
+        patterns:
+          - "*"
     labels:
       - "area-codeflow"
 
